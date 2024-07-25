@@ -1,0 +1,192 @@
+body {
+    background-image: url('welcomepage.webp'); /* Arka plan resmi */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #ffffff; /* Beyaz metin rengi */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Karartma efekti */
+    z-index: -1;
+}
+
+/* Modal Styling */
+.modal {
+    display: block; /* Modal initially shown */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000;
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #001f3f; /* Lacivert arka plan */
+    margin: 10% auto; /* Center modal on screen */
+    padding: 20px;
+    border: 2px solid #FFD700; /* Altın rengi kenar */
+    width: 80%; /* Modal width */
+    max-width: 600px; /* Max width */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.7); /* Altın rengi gölge */
+    animation: glow 1.5s infinite alternate; /* Parlama animasyonu */
+    position: relative;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+}
+
+.modal-content h2 {
+    color: #FFD700; /* Altın rengi başlık */
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Altın rengi ve gölge efekti */
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    color: #ffffff; /* Beyaz metin rengi */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.modal-content input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50; /* Başlangıçta çerçeve rengi */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş ve ölçekleme efekti */
+}
+
+.modal-content button:hover {
+    transform: scale(1.05); /* Hover durumunda büyütme efekti */
+    box-shadow: 0 0 15px #4CAF50; /* Yeşil gölge efekti */
+    border-color: #45a049; /* Hover durumunda çerçeve rengini değiştir */
+}
+
+.modal-content .cancel-btn {
+    background-color: #FF4136; /* Kırmızı arka plan */
+    border: 2px solid #FF4136; /* Başlangıçta çerçeve rengi */
+}
+
+.modal-content .cancel-btn:hover {
+    box-shadow: 0 0 15px #FF4136; /* Kırmızı gölge efekti */
+    border-color: #cc0000; /* Hover durumunda çerçeve rengini değiştir */
+}
+
+.modal-content .rank-btn {
+    background-color: #FFD700; /* Altın rengi arka plan */
+    color: #000; /* Siyah metin */
+    border: 2px solid #FFD700; /* Başlangıçta çerçeve rengi */
+}
+
+.modal-content .rank-btn:hover {
+    box-shadow: 0 0 15px #FFD700; /* Altın rengi gölge efekti */
+    border-color: #FFC700; /* Hover durumunda çerçeve rengini değiştir */
+}
+
+/* Credits Button Styling */
+.credits-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001; /* Ensure the button is above the overlay */
+}
+
+.credits-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #4CAF50;
+}
+
+/* Logo Styling */
+.logo {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 300px; /* Logonun genişliği */
+    height: auto;
+    z-index: 1001; /* Ensure the logo is above the overlay */
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Mobilde modal genişliği */
+        padding: 10px; /* Mobilde padding */
+    }
+
+    .modal-content h2 {
+        font-size: 1.5em; /* Mobilde başlık boyutu */
+    }
+
+    .modal-content p {
+        font-size: 1em; /* Mobilde paragraf boyutu */
+    }
+
+    .modal-content input {
+        width: calc(100% - 10px); /* Mobilde input genişliği */
+        padding: 8px; /* Mobilde input padding */
+        font-size: 14px; /* Mobilde input font boyutu */
+    }
+
+    .modal-content button {
+        padding: 8px 15px; /* Mobilde buton padding */
+        font-size: 14px; /* Mobilde buton font boyutu */
+        margin: 3px; /* Mobilde buton margin */
+    }
+
+    .logo {
+        position: static; /* Logonun yerleşimini değiştir */
+        margin: 20px auto 0 auto; /* Üst ve alt boşluk ayarla */
+        display: block; /* Ortalamak için block yap */
+        width: 200px; /* Mobilde logonun genişliği */
+    }
+
+    .credits-btn {
+        font-size: 12px; /* Mobilde buton font boyutu */
+        padding: 8px 15px; /* Mobilde buton padding */
+        top: 5px; /* Mobilde üst boşluk */
+        left: 5px; /* Mobilde sol boşluk */
+    }
+}
